@@ -1,0 +1,53 @@
+
+
+/* Estilos generales para el cuerpo de la página */
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+  /* Estilos para la cabecera con botones */
+header{
+    background-color: #333;
+    padding: 10px;
+    text-align: center;
+}
+
+/* Estilos para los botones */
+button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Estilos para el contenido de la página */
+.contenido {
+    display: none; /* Inicialmente oculto */
+    padding: 20px;
+}
+
+.visible {
+    display: flex; /* Mostrar cuando tiene la clase 'visible' */
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+[id^="resultado"]{
+    background-color: black;
+    color:white;
+    font-size: large;
+    font-weight: 900;
+}

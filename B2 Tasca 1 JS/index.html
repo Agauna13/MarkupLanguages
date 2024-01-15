@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>JS Tasca 7</title>
+</head>
+    <body>
+        <header>
+            <button onclick="mostrarContenido('inicio')">Inicio</button>
+            <button onclick="mostrarContenido('seccion1')">Sección 1</button>
+            <button onclick="mostrarContenido('seccion2')">Sección 2</button>
+            <button onclick="mostrarContenido('seccion3')">Sección 3</button>
+            <button onclick="mostrarContenido('seccion4')">Sección 4</button>
+            <button onclick="mostrarContenido('seccion5')">Sección 5</button>
+            <button onclick="mostrarContenido('seccion6')">Sección 6</button>
+            <button onclick="mostrarContenido('seccion7')">Sección 7</button>
+            <button onclick="mostrarContenido('seccion8')">Sección 8</button>
+            <button onclick="mostrarContenido('seccion9')">Sección 9</button>
+            <button onclick="mostrarContenido('seccion10')">Sección 10</button>
+        </header>
+        
+
+        <div id="inicio" class="contenido visible">
+                <h1>Inicio</h1>
+            <p>Contenido de la página de inicio.</p>
+        </div>
+
+        <div id="seccion1" class="contenido" >
+            <h1>contador</h1>
+            <button onclick="contador()">pulsa para numeritos :</button>
+            <p id="resultado1"></p>
+        </div>
+
+        <div id="seccion2" class="contenido" >
+            <form onsubmit="event.preventDefault();">
+                <label for="numero">primer numero?</label>
+                <input type="number" id="n1">
+                <br>
+                <label for="numero">segundo numero?</label>
+                <input type="number" id="n2">
+                <button onclick= "comparador()">Enviar</button>
+                <p id="resultado2" ></p>
+            </form>
+            
+        </div>
+        <div id="seccion3" class="contenido" >
+            <form onsubmit="event.preventDefault();">
+                <label for="numero">Primer Numero??</label>
+                <input type="number" id="n3">
+                <label for="numero">Segundo numero?</label>
+                <input type="number" id="n4">
+                <button onclick= "suma()">Enviar</button>
+                <p id="resultado3" ></p>
+            </form>
+        </div>
+            
+        </div>
+        <div id="seccion4" class="contenido" >
+            <form onsubmit="event.preventDefault();">
+                <label for="nombre">Introduzca su nombre</label>
+                <input type="text" id = "nombre">
+                <br>
+                <label for="apellido">Introduzca su apellido</label>
+                <input type="text" id="apellido">
+                <br>
+                <label for="estadoCivil">Cual es su estado civil?</label>
+                <input type="text" id="estadoCivil">
+                <br>
+                <label for="edad">Edad?</label>
+                <input type="number" id="edad">
+                <br>
+                <label for="estatura">Estatura?</label>
+                <input type="number" id="estatura">
+                <br>
+            <button onclick= "soltero()">Enviar</button>
+            </form>
+            <p id="resultado1" ></p>
+        </div>
+
+        <div id="seccion5"  class="contenido">
+            <form onsubmit="event.preventDefault();">
+                <label for="palabra">Introduzca una palabra</label>
+                <br>
+                <input type="text" id="palabra">
+                <br>
+                <button onclick="cuentaLetras()">Submit</button>
+                <p id="resultado5"></p>
+            </form>
+        </div>
+        
+        <script src="scripts.js"></script>
+
+        
+</body>
+</html>
