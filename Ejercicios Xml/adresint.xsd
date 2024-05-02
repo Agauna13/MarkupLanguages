@@ -1,21 +1,58 @@
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
-           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-           xsi:schemaLocation="adresint.xml">
+¡Claro! Aquí tienes una guía básica sobre las reglas y sintaxis básicas de XML Schema Definition (XSD):
 
-    <xs:element name="adreint">
-        <xs:complexType>
-            <xs:sequence>
-                <xs:element name="pagina" maxOccurs="unbounded">
-                    <xs:complexType>
-                        <xs:sequence>
-                            <xs:element name="nom" type="xs:string"/>
-                            <xs:element name="descripcio" type="xs:string"/>
-                            <xs:element name="url" type="xs:string"/>
-                        </xs:sequence>
-                    </xs:complexType>
-                </xs:element>
-            </xs:sequence>
-        </xs:complexType>
-    </xs:element>
+        1. **Declaración del Namespace**: Antes de definir cualquier elemento en un esquema XSD, debes declarar el espacio de nombres XML. Esto se hace generalmente al comienzo del documento XSD. Por ejemplo:
 
-</xs:schema>
+        ```xml
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    ```
+
+    2. **Definición de Elementos**: Los elementos son los bloques de construcción fundamentales de un documento XML. En XSD, se definen usando la etiqueta `<xs:element>`. Puedes definir el nombre del elemento, su tipo de datos y otras restricciones. Por ejemplo:
+
+    ```xml
+    <xs:element name="nombre" type="xs:string"/>
+    ```
+
+    3. **Definición de Tipos de Datos**: XML Schema proporciona varios tipos de datos predefinidos, como `string`, `integer`, `boolean`, `date`, etc. Además, también puedes definir tus propios tipos de datos complejos utilizando `<xs:complexType>` y `<xs:simpleType>`.
+
+        ```xml
+        <xs:simpleType name="edad">
+            <xs:restriction base="xs:integer">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="120"/>
+            </xs:restriction>
+        </xs:simpleType>
+        ```
+
+        4. **Restricciones y Validaciones**: Puedes aplicar restricciones y validaciones a los elementos utilizando atributos como `minOccurs`, `maxOccurs`, `minLength`, `maxLength`, `pattern`, `totalDigits`, `fractionDigits`, etc.
+
+        ```xml
+        <xs:element name="telefono">
+            <xs:simpleType>
+                <xs:restriction base="xs:string">
+                    <xs:pattern value="\d{3}-\d{3}-\d{4}"/>
+                </xs:restriction>
+            </xs:simpleType>
+        </xs:element>
+        ```
+
+        5. **Definición de Estructura de Documento**: Puedes definir la estructura del documento XML utilizando `<xs:sequence>`, `<xs:choice>`, `<xs:all>` para especificar el orden de los elementos, elecciones entre elementos y grupos de elementos, respectivamente.
+
+            ```xml
+            <xs:element name="contacto">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element name="nombre" type="xs:string"/>
+                        <xs:element name="email" type="xs:string"/>
+                        <xs:element name="telefono" type="telefono"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            ```
+
+            6. **Importación y Reutilización**: Puedes importar otros esquemas XSD utilizando la etiqueta `<xs:import>` y reutilizar definiciones de tipos usando `<xs:import>`. Esto fomenta la modularidad y la reutilización de esquemas.
+
+                ```xml
+                <xs:import namespace="http://example.com/namespace"/>
+                ```
+
+                Estas son solo algunas de las reglas y sintaxis básicas de XML Schema. Con estas herramientas, puedes definir estructuras de datos complejas y validar documentos XML contra ellas.
